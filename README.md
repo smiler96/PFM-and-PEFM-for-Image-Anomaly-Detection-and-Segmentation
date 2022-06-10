@@ -37,7 +37,7 @@ python PEFM_AD.py --gpu_id 0 --batch_size 1 --resize 512 --data_trans imagenet -
 
 If there is any help for your work, please consider citing this paper:
 
-```python
+```
 @ARTICLE{PFM,
     author={Wan, Qian and Gao, Liang and Li, Xinyu and Wen, Long},
     journal={IEEE Transactions on Industrial Informatics},
