@@ -1,0 +1,671 @@
+2022-03-15 10:53:29.728 | INFO     | __main__:<module>:662 - 
+
+
+2022-03-15 10:53:29.730 | INFO     | __main__:<module>:663 - Namespace(agent_S='resnet34', agent_T='resnet50', batch_size=8, data_root='D:/Dataset/mvtec_3d_anomaly_detection', data_trans='imagenet', dual_type='small', epochs=100, fea_norm=True, fusion_scale='2-3-4', fusion_type=0, gpu_id='0', latent_dim=200, loss_type='l2norm+l2', lr2=0.0003, lr3=0.0003, lr4=0.0003, pe_required=True, post_smooth=0, resize=256, seed=888, train=True, weight_decay=1e-05)
+2022-03-15 10:53:29.731 | INFO     | __main__:<module>:664 - save_root: ./result_3D/PFMT_resnet34-resnet50-small-256_888/
+2022-03-15 10:53:30.429 | INFO     | __main__:__init__:253 - resnet34-resnet50-[64, 128, 256]-[256, 512, 1024]-[200, 400, 800]
+2022-03-15 10:53:30.430 | INFO     | __main__:register:282 - Projector2: 64, 64, in_dim=64, out_dim=256, latent_dim=200, dual_type=small, pe_required=True
+2022-03-15 10:53:30.431 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 10:53:31.984 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 10:53:31.994 | INFO     | __main__:register:287 - Projector2: 32, 32, in_dim=128, out_dim=512, latent_dim=400, dual_type=small, pe_required=True
+2022-03-15 10:53:31.995 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 10:53:31.998 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 10:53:32.020 | INFO     | __main__:register:291 - Projector2: 16, 16, in_dim=256, out_dim=1024, latent_dim=800, dual_type=small, pe_required=True
+2022-03-15 10:53:32.021 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 10:53:32.025 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 10:53:50.421 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/bagel_2.pth
+2022-03-15 10:53:50.442 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/bagel_3.pth
+2022-03-15 10:53:50.467 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/bagel_4.pth
+2022-03-15 10:54:06.312 | INFO     | __main__:train:374 - Epoch-0, bagel | all: 0.76498, 0.89414 | 2: 0.60072, 0.75087| 3: 0.58626, 0.80610 | 4: 0.51291, 0.72696
+2022-03-15 10:59:44.758 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/bagel_2.pth
+2022-03-15 10:59:44.778 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/bagel_3.pth
+2022-03-15 10:59:44.805 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/bagel_4.pth
+2022-03-15 11:00:00.908 | INFO     | __main__:train:374 - Epoch-20, bagel | all: 0.96798, 0.99415 | 2: 0.91994, 0.98466| 3: 0.95093, 0.98971 | 4: 0.95661, 0.98596
+2022-03-15 11:05:40.254 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/bagel_2.pth
+2022-03-15 11:05:40.275 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/bagel_3.pth
+2022-03-15 11:05:40.301 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/bagel_4.pth
+2022-03-15 11:05:57.143 | INFO     | __main__:train:374 - Epoch-40, bagel | all: 0.97831, 0.99472 | 2: 0.94835, 0.98762| 3: 0.95403, 0.99081 | 4: 0.97262, 0.98700
+2022-03-15 11:11:40.532 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/bagel_2.pth
+2022-03-15 11:11:40.551 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/bagel_3.pth
+2022-03-15 11:11:40.576 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/bagel_4.pth
+2022-03-15 11:11:56.946 | INFO     | __main__:train:374 - Epoch-60, bagel | all: 0.97831, 0.99491 | 2: 0.95661, 0.98926| 3: 0.93440, 0.99077 | 4: 0.97107, 0.98739
+2022-03-15 11:17:38.979 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/bagel_2.pth
+2022-03-15 11:17:38.998 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/bagel_3.pth
+2022-03-15 11:17:39.022 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/bagel_4.pth
+2022-03-15 11:17:55.694 | INFO     | __main__:train:374 - Epoch-80, bagel | all: 0.97934, 0.99474 | 2: 0.95558, 0.98962| 3: 0.93285, 0.98983 | 4: 0.96281, 0.98674
+2022-03-15 11:23:20.661 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/bagel_2.pth
+2022-03-15 11:23:20.681 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/bagel_3.pth
+2022-03-15 11:23:20.708 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/bagel_4.pth
+2022-03-15 11:23:37.037 | INFO     | __main__:<module>:731 - bagel, add, image auc: 0.97056, pixel auc: 0.99422, pixel pro0.3: 0.00000
+2022-03-15 11:23:37.039 | INFO     | __main__:<module>:733 - bagel, time: 0.01829s, FPS: 54.68237.
+2022-03-15 11:23:37.708 | INFO     | __main__:__init__:253 - resnet34-resnet50-[64, 128, 256]-[256, 512, 1024]-[200, 400, 800]
+2022-03-15 11:23:37.710 | INFO     | __main__:register:282 - Projector2: 64, 64, in_dim=64, out_dim=256, latent_dim=200, dual_type=small, pe_required=True
+2022-03-15 11:23:37.711 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 11:23:37.716 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 11:23:37.724 | INFO     | __main__:register:287 - Projector2: 32, 32, in_dim=128, out_dim=512, latent_dim=400, dual_type=small, pe_required=True
+2022-03-15 11:23:37.725 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 11:23:37.729 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 11:23:37.750 | INFO     | __main__:register:291 - Projector2: 16, 16, in_dim=256, out_dim=1024, latent_dim=800, dual_type=small, pe_required=True
+2022-03-15 11:23:37.751 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 11:23:37.753 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 11:23:50.166 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cable_gland_2.pth
+2022-03-15 11:23:50.184 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cable_gland_3.pth
+2022-03-15 11:23:50.208 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cable_gland_4.pth
+2022-03-15 11:24:05.133 | INFO     | __main__:train:374 - Epoch-0, cable_gland | all: 0.54516, 0.70021 | 2: 0.49152, 0.76482| 3: 0.57198, 0.75446 | 4: 0.57581, 0.37601
+2022-03-15 11:28:09.525 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cable_gland_2.pth
+2022-03-15 11:28:09.545 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cable_gland_3.pth
+2022-03-15 11:28:09.569 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cable_gland_4.pth
+2022-03-15 11:28:23.699 | INFO     | __main__:train:374 - Epoch-20, cable_gland | all: 0.74330, 0.96347 | 2: 0.45813, 0.93825| 3: 0.69458, 0.96274 | 4: 0.74165, 0.94852
+2022-03-15 11:32:28.188 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cable_gland_2.pth
+2022-03-15 11:32:28.207 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cable_gland_3.pth
+2022-03-15 11:32:28.232 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cable_gland_4.pth
+2022-03-15 11:32:42.574 | INFO     | __main__:train:374 - Epoch-40, cable_gland | all: 0.80077, 0.97253 | 2: 0.41708, 0.94563| 3: 0.72742, 0.97578 | 4: 0.76902, 0.94413
+2022-03-15 11:36:46.974 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cable_gland_2.pth
+2022-03-15 11:36:46.995 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cable_gland_3.pth
+2022-03-15 11:36:47.018 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cable_gland_4.pth
+2022-03-15 11:37:01.231 | INFO     | __main__:train:374 - Epoch-60, cable_gland | all: 0.82266, 0.98129 | 2: 0.48714, 0.95793| 3: 0.79584, 0.98613 | 4: 0.80460, 0.94189
+2022-03-15 11:41:05.679 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cable_gland_2.pth
+2022-03-15 11:41:05.698 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cable_gland_3.pth
+2022-03-15 11:41:05.722 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cable_gland_4.pth
+2022-03-15 11:41:20.033 | INFO     | __main__:train:374 - Epoch-80, cable_gland | all: 0.84236, 0.98690 | 2: 0.42091, 0.96802| 3: 0.77614, 0.99012 | 4: 0.77614, 0.94633
+2022-03-15 11:45:12.239 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cable_gland_2.pth
+2022-03-15 11:45:12.257 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cable_gland_3.pth
+2022-03-15 11:45:12.281 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cable_gland_4.pth
+2022-03-15 11:45:26.493 | INFO     | __main__:<module>:731 - cable_gland, add, image auc: 0.88177, pixel auc: 0.99067, pixel pro0.3: 0.00000
+2022-03-15 11:45:26.495 | INFO     | __main__:<module>:733 - cable_gland, time: 0.01837s, FPS: 54.44421.
+2022-03-15 11:45:27.164 | INFO     | __main__:__init__:253 - resnet34-resnet50-[64, 128, 256]-[256, 512, 1024]-[200, 400, 800]
+2022-03-15 11:45:27.166 | INFO     | __main__:register:282 - Projector2: 64, 64, in_dim=64, out_dim=256, latent_dim=200, dual_type=small, pe_required=True
+2022-03-15 11:45:27.168 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 11:45:27.172 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 11:45:27.181 | INFO     | __main__:register:287 - Projector2: 32, 32, in_dim=128, out_dim=512, latent_dim=400, dual_type=small, pe_required=True
+2022-03-15 11:45:27.182 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 11:45:27.185 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 11:45:27.206 | INFO     | __main__:register:291 - Projector2: 16, 16, in_dim=256, out_dim=1024, latent_dim=800, dual_type=small, pe_required=True
+2022-03-15 11:45:27.207 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 11:45:27.210 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 11:45:50.071 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/carrot_2.pth
+2022-03-15 11:45:50.089 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/carrot_3.pth
+2022-03-15 11:45:50.116 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/carrot_4.pth
+2022-03-15 11:46:17.362 | INFO     | __main__:train:374 - Epoch-0, carrot | all: 0.43406, 0.93890 | 2: 0.40993, 0.89124| 3: 0.46745, 0.92245 | 4: 0.45118, 0.90091
+2022-03-15 11:52:43.975 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/carrot_2.pth
+2022-03-15 11:52:43.994 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/carrot_3.pth
+2022-03-15 11:52:44.018 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/carrot_4.pth
+2022-03-15 11:53:07.172 | INFO     | __main__:train:374 - Epoch-20, carrot | all: 0.61672, 0.97476 | 2: 0.55836, 0.97316| 3: 0.63159, 0.97572 | 4: 0.65572, 0.94546
+2022-03-15 11:59:33.658 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/carrot_2.pth
+2022-03-15 11:59:33.677 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/carrot_3.pth
+2022-03-15 11:59:33.701 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/carrot_4.pth
+2022-03-15 11:59:56.956 | INFO     | __main__:train:374 - Epoch-40, carrot | all: 0.74214, 0.98632 | 2: 0.68434, 0.97969| 3: 0.73878, 0.98671 | 4: 0.76487, 0.96671
+2022-03-15 12:06:23.352 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/carrot_2.pth
+2022-03-15 12:06:23.370 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/carrot_3.pth
+2022-03-15 12:06:23.395 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/carrot_4.pth
+2022-03-15 12:06:46.543 | INFO     | __main__:train:374 - Epoch-60, carrot | all: 0.82295, 0.99190 | 2: 0.69725, 0.98483| 3: 0.81734, 0.99176 | 4: 0.82464, 0.97588
+2022-03-15 12:13:14.308 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/carrot_2.pth
+2022-03-15 12:13:14.326 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/carrot_3.pth
+2022-03-15 12:13:14.360 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/carrot_4.pth
+2022-03-15 12:13:37.678 | INFO     | __main__:train:374 - Epoch-80, carrot | all: 0.84848, 0.99206 | 2: 0.73485, 0.98888| 3: 0.84848, 0.99246 | 4: 0.81061, 0.96096
+2022-03-15 12:19:45.716 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/carrot_2.pth
+2022-03-15 12:19:45.734 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/carrot_3.pth
+2022-03-15 12:19:45.758 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/carrot_4.pth
+2022-03-15 12:20:09.040 | INFO     | __main__:<module>:731 - carrot, add, image auc: 0.87009, pixel auc: 0.99242, pixel pro0.3: 0.00000
+2022-03-15 12:20:09.042 | INFO     | __main__:<module>:733 - carrot, time: 0.01831s, FPS: 54.61659.
+2022-03-15 12:20:09.710 | INFO     | __main__:__init__:253 - resnet34-resnet50-[64, 128, 256]-[256, 512, 1024]-[200, 400, 800]
+2022-03-15 12:20:09.713 | INFO     | __main__:register:282 - Projector2: 64, 64, in_dim=64, out_dim=256, latent_dim=200, dual_type=small, pe_required=True
+2022-03-15 12:20:09.714 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 12:20:09.741 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 12:20:09.749 | INFO     | __main__:register:287 - Projector2: 32, 32, in_dim=128, out_dim=512, latent_dim=400, dual_type=small, pe_required=True
+2022-03-15 12:20:09.751 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 12:20:09.753 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 12:20:09.774 | INFO     | __main__:register:291 - Projector2: 16, 16, in_dim=256, out_dim=1024, latent_dim=800, dual_type=small, pe_required=True
+2022-03-15 12:20:09.776 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 12:20:09.778 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 12:20:24.174 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cookie_2.pth
+2022-03-15 12:20:24.192 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cookie_3.pth
+2022-03-15 12:20:24.215 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cookie_4.pth
+2022-03-15 12:20:43.626 | INFO     | __main__:train:374 - Epoch-0, cookie | all: 0.31103, 0.64526 | 2: 0.31588, 0.70996| 3: 0.48301, 0.67225 | 4: 0.63870, 0.44938
+2022-03-15 12:24:44.700 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cookie_2.pth
+2022-03-15 12:24:44.720 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cookie_3.pth
+2022-03-15 12:24:44.744 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cookie_4.pth
+2022-03-15 12:25:02.204 | INFO     | __main__:train:374 - Epoch-20, cookie | all: 0.61269, 0.97297 | 2: 0.41852, 0.94045| 3: 0.61685, 0.96695 | 4: 0.62171, 0.96359
+2022-03-15 12:29:03.307 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cookie_2.pth
+2022-03-15 12:29:03.324 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cookie_3.pth
+2022-03-15 12:29:03.349 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cookie_4.pth
+2022-03-15 12:29:20.847 | INFO     | __main__:train:374 - Epoch-40, cookie | all: 0.62968, 0.97866 | 2: 0.43377, 0.94772| 3: 0.68689, 0.97166 | 4: 0.66123, 0.96580
+2022-03-15 12:33:21.967 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cookie_2.pth
+2022-03-15 12:33:21.985 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cookie_3.pth
+2022-03-15 12:33:22.010 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cookie_4.pth
+2022-03-15 12:33:39.528 | INFO     | __main__:train:374 - Epoch-60, cookie | all: 0.66297, 0.98210 | 2: 0.48266, 0.95313| 3: 0.61026, 0.97314 | 4: 0.69487, 0.96671
+2022-03-15 12:37:40.674 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cookie_2.pth
+2022-03-15 12:37:40.692 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cookie_3.pth
+2022-03-15 12:37:40.715 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cookie_4.pth
+2022-03-15 12:37:58.417 | INFO     | __main__:train:374 - Epoch-80, cookie | all: 0.64147, 0.98364 | 2: 0.38419, 0.95763| 3: 0.61477, 0.97098 | 4: 0.69521, 0.96887
+2022-03-15 12:41:47.776 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cookie_2.pth
+2022-03-15 12:41:47.794 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cookie_3.pth
+2022-03-15 12:41:47.817 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cookie_4.pth
+2022-03-15 12:42:05.397 | INFO     | __main__:<module>:731 - cookie, add, image auc: 0.64390, pixel auc: 0.97880, pixel pro0.3: 0.00000
+2022-03-15 12:42:05.399 | INFO     | __main__:<module>:733 - cookie, time: 0.01839s, FPS: 54.36718.
+2022-03-15 12:42:06.057 | INFO     | __main__:__init__:253 - resnet34-resnet50-[64, 128, 256]-[256, 512, 1024]-[200, 400, 800]
+2022-03-15 12:42:06.059 | INFO     | __main__:register:282 - Projector2: 64, 64, in_dim=64, out_dim=256, latent_dim=200, dual_type=small, pe_required=True
+2022-03-15 12:42:06.060 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 12:42:06.065 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 12:42:06.073 | INFO     | __main__:register:287 - Projector2: 32, 32, in_dim=128, out_dim=512, latent_dim=400, dual_type=small, pe_required=True
+2022-03-15 12:42:06.074 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 12:42:06.221 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 12:42:06.242 | INFO     | __main__:register:291 - Projector2: 16, 16, in_dim=256, out_dim=1024, latent_dim=800, dual_type=small, pe_required=True
+2022-03-15 12:42:06.243 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 12:42:06.246 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 12:42:23.866 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/dowel_2.pth
+2022-03-15 12:42:23.886 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/dowel_3.pth
+2022-03-15 12:42:23.910 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/dowel_4.pth
+2022-03-15 12:42:41.401 | INFO     | __main__:train:374 - Epoch-0, dowel | all: 0.63720, 0.78445 | 2: 0.67271, 0.73040| 3: 0.47670, 0.85269 | 4: 0.54068, 0.57918
+2022-03-15 12:47:55.902 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/dowel_2.pth
+2022-03-15 12:47:55.921 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/dowel_3.pth
+2022-03-15 12:47:55.947 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/dowel_4.pth
+2022-03-15 12:48:13.168 | INFO     | __main__:train:374 - Epoch-20, dowel | all: 0.84541, 0.98481 | 2: 0.62315, 0.97184| 3: 0.86464, 0.98669 | 4: 0.83580, 0.95446
+2022-03-15 12:53:27.720 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/dowel_2.pth
+2022-03-15 12:53:27.739 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/dowel_3.pth
+2022-03-15 12:53:27.763 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/dowel_4.pth
+2022-03-15 12:53:45.015 | INFO     | __main__:train:374 - Epoch-40, dowel | all: 0.90533, 0.99159 | 2: 0.64312, 0.97762| 3: 0.90385, 0.99126 | 4: 0.84024, 0.93931
+2022-03-15 12:58:59.499 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/dowel_2.pth
+2022-03-15 12:58:59.531 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/dowel_3.pth
+2022-03-15 12:58:59.659 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/dowel_4.pth
+2022-03-15 12:59:16.754 | INFO     | __main__:train:374 - Epoch-60, dowel | all: 0.95599, 0.99490 | 2: 0.70969, 0.98296| 3: 0.95562, 0.99428 | 4: 0.83654, 0.94184
+2022-03-15 13:04:31.205 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/dowel_2.pth
+2022-03-15 13:04:31.223 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/dowel_3.pth
+2022-03-15 13:04:31.247 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/dowel_4.pth
+2022-03-15 13:04:48.379 | INFO     | __main__:train:374 - Epoch-80, dowel | all: 0.96930, 0.99578 | 2: 0.77737, 0.98677| 3: 0.95303, 0.99568 | 4: 0.79068, 0.91579
+2022-03-15 13:09:46.962 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/dowel_2.pth
+2022-03-15 13:09:46.981 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/dowel_3.pth
+2022-03-15 13:09:47.004 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/dowel_4.pth
+2022-03-15 13:10:04.179 | INFO     | __main__:<module>:731 - dowel, add, image auc: 0.96043, pixel auc: 0.99613, pixel pro0.3: 0.00000
+2022-03-15 13:10:04.182 | INFO     | __main__:<module>:733 - dowel, time: 0.01835s, FPS: 54.49331.
+2022-03-15 13:10:04.840 | INFO     | __main__:__init__:253 - resnet34-resnet50-[64, 128, 256]-[256, 512, 1024]-[200, 400, 800]
+2022-03-15 13:10:04.842 | INFO     | __main__:register:282 - Projector2: 64, 64, in_dim=64, out_dim=256, latent_dim=200, dual_type=small, pe_required=True
+2022-03-15 13:10:04.843 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 13:10:04.848 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 13:10:04.856 | INFO     | __main__:register:287 - Projector2: 32, 32, in_dim=128, out_dim=512, latent_dim=400, dual_type=small, pe_required=True
+2022-03-15 13:10:04.857 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 13:10:04.860 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 13:10:04.881 | INFO     | __main__:register:291 - Projector2: 16, 16, in_dim=256, out_dim=1024, latent_dim=800, dual_type=small, pe_required=True
+2022-03-15 13:10:04.882 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 13:10:04.885 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 13:10:30.672 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/peach_2.pth
+2022-03-15 13:10:30.689 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/peach_3.pth
+2022-03-15 13:10:30.716 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/peach_4.pth
+2022-03-15 13:10:51.300 | INFO     | __main__:train:374 - Epoch-0, peach | all: 0.48440, 0.93182 | 2: 0.40493, 0.70815| 3: 0.52431, 0.93182 | 4: 0.54390, 0.93091
+2022-03-15 13:18:04.584 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/peach_2.pth
+2022-03-15 13:18:04.601 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/peach_3.pth
+2022-03-15 13:18:04.625 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/peach_4.pth
+2022-03-15 13:18:22.618 | INFO     | __main__:train:374 - Epoch-20, peach | all: 0.86139, 0.99073 | 2: 0.64695, 0.98153| 3: 0.77685, 0.98931 | 4: 0.82184, 0.98002
+2022-03-15 13:25:36.933 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/peach_2.pth
+2022-03-15 13:25:36.950 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/peach_3.pth
+2022-03-15 13:25:36.973 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/peach_4.pth
+2022-03-15 13:25:55.153 | INFO     | __main__:train:374 - Epoch-40, peach | all: 0.87736, 0.99215 | 2: 0.70501, 0.98715| 3: 0.76705, 0.99057 | 4: 0.83926, 0.98145
+2022-03-15 13:33:09.365 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/peach_2.pth
+2022-03-15 13:33:09.382 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/peach_3.pth
+2022-03-15 13:33:09.406 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/peach_4.pth
+2022-03-15 13:33:27.500 | INFO     | __main__:train:374 - Epoch-60, peach | all: 0.87954, 0.99169 | 2: 0.73512, 0.98802| 3: 0.69920, 0.98816 | 4: 0.88062, 0.98398
+2022-03-15 13:40:41.432 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/peach_2.pth
+2022-03-15 13:40:41.449 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/peach_3.pth
+2022-03-15 13:40:41.473 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/peach_4.pth
+2022-03-15 13:40:59.506 | INFO     | __main__:train:374 - Epoch-80, peach | all: 0.91219, 0.99241 | 2: 0.75073, 0.98968| 3: 0.76705, 0.98776 | 4: 0.87736, 0.98447
+2022-03-15 13:47:51.556 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/peach_2.pth
+2022-03-15 13:47:51.573 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/peach_3.pth
+2022-03-15 13:47:51.597 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/peach_4.pth
+2022-03-15 13:48:09.825 | INFO     | __main__:<module>:731 - peach, add, image auc: 0.89731, pixel auc: 0.99168, pixel pro0.3: 0.00000
+2022-03-15 13:48:09.828 | INFO     | __main__:<module>:733 - peach, time: 0.01829s, FPS: 54.66889.
+2022-03-15 13:48:10.483 | INFO     | __main__:__init__:253 - resnet34-resnet50-[64, 128, 256]-[256, 512, 1024]-[200, 400, 800]
+2022-03-15 13:48:10.486 | INFO     | __main__:register:282 - Projector2: 64, 64, in_dim=64, out_dim=256, latent_dim=200, dual_type=small, pe_required=True
+2022-03-15 13:48:10.487 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 13:48:10.492 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 13:48:10.500 | INFO     | __main__:register:287 - Projector2: 32, 32, in_dim=128, out_dim=512, latent_dim=400, dual_type=small, pe_required=True
+2022-03-15 13:48:10.501 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 13:48:10.504 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 13:48:10.525 | INFO     | __main__:register:291 - Projector2: 16, 16, in_dim=256, out_dim=1024, latent_dim=800, dual_type=small, pe_required=True
+2022-03-15 13:48:10.526 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 13:48:10.529 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 13:48:31.855 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/potato_2.pth
+2022-03-15 13:48:31.874 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/potato_3.pth
+2022-03-15 13:48:31.900 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/potato_4.pth
+2022-03-15 13:48:52.277 | INFO     | __main__:train:374 - Epoch-0, potato | all: 0.50049, 0.79074 | 2: 0.54348, 0.77524| 3: 0.31522, 0.70257 | 4: 0.33053, 0.59683
+2022-03-15 13:55:34.897 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/potato_2.pth
+2022-03-15 13:55:34.917 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/potato_3.pth
+2022-03-15 13:55:34.941 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/potato_4.pth
+2022-03-15 13:55:51.562 | INFO     | __main__:train:374 - Epoch-20, potato | all: 0.54644, 0.97611 | 2: 0.57016, 0.97521| 3: 0.52026, 0.97958 | 4: 0.47678, 0.93388
+2022-03-15 14:02:34.335 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/potato_2.pth
+2022-03-15 14:02:34.354 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/potato_3.pth
+2022-03-15 14:02:34.378 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/potato_4.pth
+2022-03-15 14:02:51.078 | INFO     | __main__:train:374 - Epoch-40, potato | all: 0.62154, 0.98597 | 2: 0.60474, 0.98075| 3: 0.59536, 0.98896 | 4: 0.56275, 0.95050
+2022-03-15 14:09:33.646 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/potato_2.pth
+2022-03-15 14:09:33.665 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/potato_3.pth
+2022-03-15 14:09:33.690 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/potato_4.pth
+2022-03-15 14:09:50.329 | INFO     | __main__:train:374 - Epoch-60, potato | all: 0.61314, 0.98965 | 2: 0.61709, 0.98740| 3: 0.60425, 0.99116 | 4: 0.59536, 0.95401
+2022-03-15 14:16:33.320 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/potato_2.pth
+2022-03-15 14:16:33.338 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/potato_3.pth
+2022-03-15 14:16:33.362 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/potato_4.pth
+2022-03-15 14:16:50.055 | INFO     | __main__:train:374 - Epoch-80, potato | all: 0.60425, 0.99080 | 2: 0.64575, 0.98970| 3: 0.56670, 0.99224 | 4: 0.62302, 0.96242
+2022-03-15 14:23:12.556 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/potato_2.pth
+2022-03-15 14:23:12.575 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/potato_3.pth
+2022-03-15 14:23:12.599 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/potato_4.pth
+2022-03-15 14:23:29.201 | INFO     | __main__:<module>:731 - potato, add, image auc: 0.63982, pixel auc: 0.99235, pixel pro0.3: 0.00000
+2022-03-15 14:23:29.203 | INFO     | __main__:<module>:733 - potato, time: 0.01836s, FPS: 54.45698.
+2022-03-15 14:23:29.866 | INFO     | __main__:__init__:253 - resnet34-resnet50-[64, 128, 256]-[256, 512, 1024]-[200, 400, 800]
+2022-03-15 14:23:29.869 | INFO     | __main__:register:282 - Projector2: 64, 64, in_dim=64, out_dim=256, latent_dim=200, dual_type=small, pe_required=True
+2022-03-15 14:23:29.870 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 14:23:29.875 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 14:23:29.884 | INFO     | __main__:register:287 - Projector2: 32, 32, in_dim=128, out_dim=512, latent_dim=400, dual_type=small, pe_required=True
+2022-03-15 14:23:29.885 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 14:23:29.887 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 14:23:29.909 | INFO     | __main__:register:291 - Projector2: 16, 16, in_dim=256, out_dim=1024, latent_dim=800, dual_type=small, pe_required=True
+2022-03-15 14:23:29.910 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 14:23:29.912 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 14:23:50.330 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/rope_2.pth
+2022-03-15 14:23:50.474 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/rope_3.pth
+2022-03-15 14:23:50.498 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/rope_4.pth
+2022-03-15 14:24:06.888 | INFO     | __main__:train:374 - Epoch-0, rope | all: 0.91621, 0.87209 | 2: 0.43931, 0.67301| 3: 0.65580, 0.88199 | 4: 0.63723, 0.83440
+2022-03-15 14:30:12.454 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/rope_2.pth
+2022-03-15 14:30:12.472 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/rope_3.pth
+2022-03-15 14:30:12.496 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/rope_4.pth
+2022-03-15 14:30:26.531 | INFO     | __main__:train:374 - Epoch-20, rope | all: 0.95607, 0.99228 | 2: 0.78397, 0.96384| 3: 0.96150, 0.98763 | 4: 0.95245, 0.97640
+2022-03-15 14:36:31.617 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/rope_2.pth
+2022-03-15 14:36:31.635 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/rope_3.pth
+2022-03-15 14:36:31.660 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/rope_4.pth
+2022-03-15 14:36:45.847 | INFO     | __main__:train:374 - Epoch-40, rope | all: 0.98053, 0.99288 | 2: 0.76268, 0.96947| 3: 0.99457, 0.98801 | 4: 0.97056, 0.97703
+2022-03-15 14:42:52.438 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/rope_2.pth
+2022-03-15 14:42:52.455 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/rope_3.pth
+2022-03-15 14:42:52.479 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/rope_4.pth
+2022-03-15 14:43:06.706 | INFO     | __main__:train:374 - Epoch-60, rope | all: 0.98007, 0.99302 | 2: 0.81431, 0.97573| 3: 0.99457, 0.98531 | 4: 0.95018, 0.97566
+2022-03-15 14:49:12.785 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/rope_2.pth
+2022-03-15 14:49:12.803 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/rope_3.pth
+2022-03-15 14:49:12.826 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/rope_4.pth
+2022-03-15 14:49:26.998 | INFO     | __main__:train:374 - Epoch-80, rope | all: 0.97781, 0.99248 | 2: 0.76132, 0.97676| 3: 0.99185, 0.98146 | 4: 0.95426, 0.97646
+2022-03-15 14:55:13.790 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/rope_2.pth
+2022-03-15 14:55:13.809 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/rope_3.pth
+2022-03-15 14:55:13.832 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/rope_4.pth
+2022-03-15 14:55:28.012 | INFO     | __main__:<module>:731 - rope, add, image auc: 0.99185, pixel auc: 0.99302, pixel pro0.3: 0.00000
+2022-03-15 14:55:28.014 | INFO     | __main__:<module>:733 - rope, time: 0.01831s, FPS: 54.62261.
+2022-03-15 14:55:28.685 | INFO     | __main__:__init__:253 - resnet34-resnet50-[64, 128, 256]-[256, 512, 1024]-[200, 400, 800]
+2022-03-15 14:55:28.688 | INFO     | __main__:register:282 - Projector2: 64, 64, in_dim=64, out_dim=256, latent_dim=200, dual_type=small, pe_required=True
+2022-03-15 14:55:28.689 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 14:55:28.694 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 14:55:28.702 | INFO     | __main__:register:287 - Projector2: 32, 32, in_dim=128, out_dim=512, latent_dim=400, dual_type=small, pe_required=True
+2022-03-15 14:55:28.703 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 14:55:28.706 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 14:55:28.727 | INFO     | __main__:register:291 - Projector2: 16, 16, in_dim=256, out_dim=1024, latent_dim=800, dual_type=small, pe_required=True
+2022-03-15 14:55:28.729 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 14:55:28.731 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 14:55:42.476 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/tire_2.pth
+2022-03-15 14:55:42.494 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/tire_3.pth
+2022-03-15 14:55:42.516 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/tire_4.pth
+2022-03-15 14:55:58.350 | INFO     | __main__:train:374 - Epoch-0, tire | all: 0.26897, 0.33408 | 2: 0.33103, 0.70392| 3: 0.55494, 0.32818 | 4: 0.49149, 0.17930
+2022-03-15 15:00:29.235 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/tire_2.pth
+2022-03-15 15:00:29.254 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/tire_3.pth
+2022-03-15 15:00:29.278 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/tire_4.pth
+2022-03-15 15:00:45.250 | INFO     | __main__:train:374 - Epoch-20, tire | all: 0.63080, 0.96476 | 2: 0.55402, 0.95032| 3: 0.63402, 0.97419 | 4: 0.63494, 0.86678
+2022-03-15 15:05:16.925 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/tire_2.pth
+2022-03-15 15:05:16.943 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/tire_3.pth
+2022-03-15 15:05:16.967 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/tire_4.pth
+2022-03-15 15:05:33.058 | INFO     | __main__:train:374 - Epoch-40, tire | all: 0.64046, 0.97637 | 2: 0.53839, 0.95887| 3: 0.66713, 0.98289 | 4: 0.67218, 0.89099
+2022-03-15 15:10:04.883 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/tire_2.pth
+2022-03-15 15:10:04.903 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/tire_3.pth
+2022-03-15 15:10:04.926 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/tire_4.pth
+2022-03-15 15:10:21.017 | INFO     | __main__:train:374 - Epoch-60, tire | all: 0.67816, 0.98346 | 2: 0.53103, 0.96598| 3: 0.70575, 0.98746 | 4: 0.69057, 0.92799
+2022-03-15 15:14:52.284 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/tire_2.pth
+2022-03-15 15:14:52.303 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/tire_3.pth
+2022-03-15 15:14:52.327 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/tire_4.pth
+2022-03-15 15:15:08.358 | INFO     | __main__:train:374 - Epoch-80, tire | all: 0.69241, 0.98693 | 2: 0.56736, 0.97073| 3: 0.74805, 0.99004 | 4: 0.73701, 0.92317
+2022-03-15 15:19:25.788 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/tire_2.pth
+2022-03-15 15:19:25.805 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/tire_3.pth
+2022-03-15 15:19:25.829 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/tire_4.pth
+2022-03-15 15:19:41.802 | INFO     | __main__:<module>:731 - tire, add, image auc: 0.71586, pixel auc: 0.98778, pixel pro0.3: 0.00000
+2022-03-15 15:19:41.804 | INFO     | __main__:<module>:733 - tire, time: 0.01833s, FPS: 54.54083.
+2022-03-15 15:19:42.711 | INFO     | __main__:__init__:253 - resnet34-resnet50-[64, 128, 256]-[256, 512, 1024]-[200, 400, 800]
+2022-03-15 15:19:42.713 | INFO     | __main__:register:282 - Projector2: 64, 64, in_dim=64, out_dim=256, latent_dim=200, dual_type=small, pe_required=True
+2022-03-15 15:19:42.714 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 15:19:42.719 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 15:19:42.727 | INFO     | __main__:register:287 - Projector2: 32, 32, in_dim=128, out_dim=512, latent_dim=400, dual_type=small, pe_required=True
+2022-03-15 15:19:42.728 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 15:19:42.731 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 15:19:42.753 | INFO     | __main__:register:291 - Projector2: 16, 16, in_dim=256, out_dim=1024, latent_dim=800, dual_type=small, pe_required=True
+2022-03-15 15:19:42.754 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 15:19:42.756 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 15:20:03.407 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/foam_2.pth
+2022-03-15 15:20:03.425 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/foam_3.pth
+2022-03-15 15:20:03.449 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/foam_4.pth
+2022-03-15 15:20:21.439 | INFO     | __main__:train:374 - Epoch-0, foam | all: 0.47375, 0.55583 | 2: 0.50375, 0.63000| 3: 0.40000, 0.64441 | 4: 0.50562, 0.42182
+2022-03-15 15:26:14.492 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/foam_2.pth
+2022-03-15 15:26:14.510 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/foam_3.pth
+2022-03-15 15:26:14.534 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/foam_4.pth
+2022-03-15 15:26:29.996 | INFO     | __main__:train:374 - Epoch-20, foam | all: 0.65312, 0.87077 | 2: 0.45375, 0.86742| 3: 0.71313, 0.91050 | 4: 0.68875, 0.65913
+2022-03-15 15:32:23.018 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/foam_2.pth
+2022-03-15 15:32:23.036 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/foam_3.pth
+2022-03-15 15:32:23.061 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/foam_4.pth
+2022-03-15 15:32:38.474 | INFO     | __main__:train:374 - Epoch-40, foam | all: 0.66062, 0.89542 | 2: 0.49875, 0.88371| 3: 0.73250, 0.93270 | 4: 0.71500, 0.69436
+2022-03-15 15:38:31.020 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/foam_2.pth
+2022-03-15 15:38:31.038 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/foam_3.pth
+2022-03-15 15:38:31.062 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/foam_4.pth
+2022-03-15 15:38:46.410 | INFO     | __main__:train:374 - Epoch-60, foam | all: 0.63938, 0.90614 | 2: 0.48125, 0.90137| 3: 0.76250, 0.93899 | 4: 0.74312, 0.70048
+2022-03-15 15:44:39.262 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/foam_2.pth
+2022-03-15 15:44:39.280 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/foam_3.pth
+2022-03-15 15:44:39.305 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/foam_4.pth
+2022-03-15 15:44:54.675 | INFO     | __main__:train:374 - Epoch-80, foam | all: 0.68187, 0.91885 | 2: 0.45562, 0.91057| 3: 0.79000, 0.94237 | 4: 0.75938, 0.74439
+2022-03-15 15:50:29.901 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/foam_2.pth
+2022-03-15 15:50:29.919 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/foam_3.pth
+2022-03-15 15:50:29.943 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/foam_4.pth
+2022-03-15 15:50:45.388 | INFO     | __main__:<module>:731 - foam, add, image auc: 0.67250, pixel auc: 0.91788, pixel pro0.3: 0.00000
+2022-03-15 15:50:45.391 | INFO     | __main__:<module>:733 - foam, time: 0.01842s, FPS: 54.28689.
+2022-03-15 15:50:45.393 | INFO     | __main__:<module>:739 - total, add, image AUC: 0.82441 | pixel AUC: 0.98350 | pixel PROo.3: 0.00000
+2022-03-15 15:50:45.395 | INFO     | __main__:<module>:740 - total, time: 0.01834s, FPS: 54.51770.
+2022-03-15 16:24:15.828 | INFO     | __main__:<module>:662 - 
+
+
+2022-03-15 16:24:15.830 | INFO     | __main__:<module>:663 - Namespace(agent_S='resnet34', agent_T='resnet50', batch_size=4, data_root='D:/Dataset/mvtec_3d_anomaly_detection', data_trans='imagenet', dual_type='small', epochs=100, fea_norm=True, fusion_scale='2-3-4', fusion_type=0, gpu_id='0', latent_dim=200, loss_type='l2norm+l2', lr2=0.0003, lr3=0.0003, lr4=0.0003, pe_required=True, post_smooth=0, resize=256, seed=888, train='True', weight_decay=1e-05)
+2022-03-15 16:24:15.832 | INFO     | __main__:<module>:664 - save_root: ./result_3D/PFMT_resnet34-resnet50-small-256_888/
+2022-03-15 16:24:16.500 | INFO     | __main__:__init__:253 - resnet34-resnet50-[64, 128, 256]-[256, 512, 1024]-[200, 400, 800]
+2022-03-15 16:24:16.502 | INFO     | __main__:register:282 - Projector2: 64, 64, in_dim=64, out_dim=256, latent_dim=200, dual_type=small, pe_required=True
+2022-03-15 16:24:16.503 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 16:24:18.061 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 16:24:18.072 | INFO     | __main__:register:287 - Projector2: 32, 32, in_dim=128, out_dim=512, latent_dim=400, dual_type=small, pe_required=True
+2022-03-15 16:24:18.074 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 16:24:18.079 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 16:24:18.106 | INFO     | __main__:register:291 - Projector2: 16, 16, in_dim=256, out_dim=1024, latent_dim=800, dual_type=small, pe_required=True
+2022-03-15 16:24:18.108 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 16:24:18.112 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 16:24:18.300 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/bagel_2.pth
+2022-03-15 16:24:18.313 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/bagel_3.pth
+2022-03-15 16:24:18.332 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/bagel_4.pth
+2022-03-15 16:26:25.405 | INFO     | __main__:<module>:731 - bagel, add, image auc: 0.97056, pixel auc: 0.99422, pixel pro0.3: 0.97521
+2022-03-15 16:26:25.407 | INFO     | __main__:<module>:733 - bagel, time: 0.02943s, FPS: 33.97853.
+2022-03-15 16:26:26.047 | INFO     | __main__:__init__:253 - resnet34-resnet50-[64, 128, 256]-[256, 512, 1024]-[200, 400, 800]
+2022-03-15 16:26:26.049 | INFO     | __main__:register:282 - Projector2: 64, 64, in_dim=64, out_dim=256, latent_dim=200, dual_type=small, pe_required=True
+2022-03-15 16:26:26.050 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 16:26:26.070 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 16:26:26.077 | INFO     | __main__:register:287 - Projector2: 32, 32, in_dim=128, out_dim=512, latent_dim=400, dual_type=small, pe_required=True
+2022-03-15 16:26:26.078 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 16:26:26.081 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 16:26:26.102 | INFO     | __main__:register:291 - Projector2: 16, 16, in_dim=256, out_dim=1024, latent_dim=800, dual_type=small, pe_required=True
+2022-03-15 16:26:26.103 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 16:26:26.106 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 16:26:26.270 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cable_gland_2.pth
+2022-03-15 16:26:26.282 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cable_gland_3.pth
+2022-03-15 16:26:26.300 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cable_gland_4.pth
+2022-03-15 16:28:17.352 | INFO     | __main__:<module>:731 - cable_gland, add, image auc: 0.88177, pixel auc: 0.99067, pixel pro0.3: 0.97571
+2022-03-15 16:28:17.355 | INFO     | __main__:<module>:733 - cable_gland, time: 0.01793s, FPS: 55.76199.
+2022-03-15 16:28:17.978 | INFO     | __main__:__init__:253 - resnet34-resnet50-[64, 128, 256]-[256, 512, 1024]-[200, 400, 800]
+2022-03-15 16:28:17.980 | INFO     | __main__:register:282 - Projector2: 64, 64, in_dim=64, out_dim=256, latent_dim=200, dual_type=small, pe_required=True
+2022-03-15 16:28:17.981 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 16:28:18.001 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 16:28:18.008 | INFO     | __main__:register:287 - Projector2: 32, 32, in_dim=128, out_dim=512, latent_dim=400, dual_type=small, pe_required=True
+2022-03-15 16:28:18.009 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 16:28:18.012 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 16:28:18.033 | INFO     | __main__:register:291 - Projector2: 16, 16, in_dim=256, out_dim=1024, latent_dim=800, dual_type=small, pe_required=True
+2022-03-15 16:28:18.034 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 16:28:18.037 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 16:28:18.201 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/carrot_2.pth
+2022-03-15 16:28:18.213 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/carrot_3.pth
+2022-03-15 16:28:18.231 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/carrot_4.pth
+2022-03-15 16:31:07.978 | INFO     | __main__:<module>:731 - carrot, add, image auc: 0.87009, pixel auc: 0.99242, pixel pro0.3: 0.97716
+2022-03-15 16:31:07.981 | INFO     | __main__:<module>:733 - carrot, time: 0.01793s, FPS: 55.78236.
+2022-03-15 16:31:08.606 | INFO     | __main__:__init__:253 - resnet34-resnet50-[64, 128, 256]-[256, 512, 1024]-[200, 400, 800]
+2022-03-15 16:31:08.608 | INFO     | __main__:register:282 - Projector2: 64, 64, in_dim=64, out_dim=256, latent_dim=200, dual_type=small, pe_required=True
+2022-03-15 16:31:08.609 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 16:31:08.630 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 16:31:08.637 | INFO     | __main__:register:287 - Projector2: 32, 32, in_dim=128, out_dim=512, latent_dim=400, dual_type=small, pe_required=True
+2022-03-15 16:31:08.638 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 16:31:08.641 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 16:31:08.662 | INFO     | __main__:register:291 - Projector2: 16, 16, in_dim=256, out_dim=1024, latent_dim=800, dual_type=small, pe_required=True
+2022-03-15 16:31:08.664 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 16:31:08.667 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 16:31:08.833 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cookie_2.pth
+2022-03-15 16:31:08.846 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cookie_3.pth
+2022-03-15 16:31:08.865 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cookie_4.pth
+2022-03-15 16:33:34.341 | INFO     | __main__:<module>:731 - cookie, add, image auc: 0.64390, pixel auc: 0.97880, pixel pro0.3: 0.89047
+2022-03-15 16:33:34.343 | INFO     | __main__:<module>:733 - cookie, time: 0.01816s, FPS: 55.05097.
+2022-03-15 16:33:34.978 | INFO     | __main__:__init__:253 - resnet34-resnet50-[64, 128, 256]-[256, 512, 1024]-[200, 400, 800]
+2022-03-15 16:33:34.980 | INFO     | __main__:register:282 - Projector2: 64, 64, in_dim=64, out_dim=256, latent_dim=200, dual_type=small, pe_required=True
+2022-03-15 16:33:34.981 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 16:33:35.002 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 16:33:35.010 | INFO     | __main__:register:287 - Projector2: 32, 32, in_dim=128, out_dim=512, latent_dim=400, dual_type=small, pe_required=True
+2022-03-15 16:33:35.011 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 16:33:35.014 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 16:33:35.035 | INFO     | __main__:register:291 - Projector2: 16, 16, in_dim=256, out_dim=1024, latent_dim=800, dual_type=small, pe_required=True
+2022-03-15 16:33:35.036 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 16:33:35.039 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 16:33:35.226 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/dowel_2.pth
+2022-03-15 16:33:35.239 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/dowel_3.pth
+2022-03-15 16:33:35.258 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/dowel_4.pth
+2022-03-15 16:35:56.698 | INFO     | __main__:<module>:731 - dowel, add, image auc: 0.96043, pixel auc: 0.99613, pixel pro0.3: 0.98021
+2022-03-15 16:35:56.700 | INFO     | __main__:<module>:733 - dowel, time: 0.01827s, FPS: 54.72231.
+2022-03-15 16:35:57.364 | INFO     | __main__:__init__:253 - resnet34-resnet50-[64, 128, 256]-[256, 512, 1024]-[200, 400, 800]
+2022-03-15 16:35:57.366 | INFO     | __main__:register:282 - Projector2: 64, 64, in_dim=64, out_dim=256, latent_dim=200, dual_type=small, pe_required=True
+2022-03-15 16:35:57.367 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 16:35:57.401 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 16:35:57.409 | INFO     | __main__:register:287 - Projector2: 32, 32, in_dim=128, out_dim=512, latent_dim=400, dual_type=small, pe_required=True
+2022-03-15 16:35:57.410 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 16:35:57.413 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 16:35:57.435 | INFO     | __main__:register:291 - Projector2: 16, 16, in_dim=256, out_dim=1024, latent_dim=800, dual_type=small, pe_required=True
+2022-03-15 16:35:57.436 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 16:35:57.438 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 16:35:57.603 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/peach_2.pth
+2022-03-15 16:35:57.615 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/peach_3.pth
+2022-03-15 16:35:57.634 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/peach_4.pth
+2022-03-15 16:38:20.135 | INFO     | __main__:<module>:731 - peach, add, image auc: 0.89731, pixel auc: 0.99168, pixel pro0.3: 0.96923
+2022-03-15 16:38:20.137 | INFO     | __main__:<module>:733 - peach, time: 0.01801s, FPS: 55.51775.
+2022-03-15 16:38:20.823 | INFO     | __main__:__init__:253 - resnet34-resnet50-[64, 128, 256]-[256, 512, 1024]-[200, 400, 800]
+2022-03-15 16:38:20.825 | INFO     | __main__:register:282 - Projector2: 64, 64, in_dim=64, out_dim=256, latent_dim=200, dual_type=small, pe_required=True
+2022-03-15 16:38:20.826 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 16:38:20.838 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 16:38:20.846 | INFO     | __main__:register:287 - Projector2: 32, 32, in_dim=128, out_dim=512, latent_dim=400, dual_type=small, pe_required=True
+2022-03-15 16:38:20.847 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 16:38:20.850 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 16:38:20.874 | INFO     | __main__:register:291 - Projector2: 16, 16, in_dim=256, out_dim=1024, latent_dim=800, dual_type=small, pe_required=True
+2022-03-15 16:38:20.875 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 16:38:20.878 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 16:38:21.046 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/potato_2.pth
+2022-03-15 16:38:21.058 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/potato_3.pth
+2022-03-15 16:38:21.078 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/potato_4.pth
+2022-03-15 16:40:24.735 | INFO     | __main__:<module>:731 - potato, add, image auc: 0.63982, pixel auc: 0.99235, pixel pro0.3: 0.96833
+2022-03-15 16:40:24.738 | INFO     | __main__:<module>:733 - potato, time: 0.01878s, FPS: 53.23955.
+2022-03-15 16:40:25.365 | INFO     | __main__:__init__:253 - resnet34-resnet50-[64, 128, 256]-[256, 512, 1024]-[200, 400, 800]
+2022-03-15 16:40:25.367 | INFO     | __main__:register:282 - Projector2: 64, 64, in_dim=64, out_dim=256, latent_dim=200, dual_type=small, pe_required=True
+2022-03-15 16:40:25.368 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 16:40:25.399 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 16:40:25.407 | INFO     | __main__:register:287 - Projector2: 32, 32, in_dim=128, out_dim=512, latent_dim=400, dual_type=small, pe_required=True
+2022-03-15 16:40:25.408 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 16:40:25.411 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 16:40:25.432 | INFO     | __main__:register:291 - Projector2: 16, 16, in_dim=256, out_dim=1024, latent_dim=800, dual_type=small, pe_required=True
+2022-03-15 16:40:25.433 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 16:40:25.435 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 16:40:25.604 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/rope_2.pth
+2022-03-15 16:40:25.616 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/rope_3.pth
+2022-03-15 16:40:25.635 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/rope_4.pth
+2022-03-15 16:42:12.318 | INFO     | __main__:<module>:731 - rope, add, image auc: 0.99185, pixel auc: 0.99302, pixel pro0.3: 0.95094
+2022-03-15 16:42:12.319 | INFO     | __main__:<module>:733 - rope, time: 0.01847s, FPS: 54.15582.
+2022-03-15 16:42:12.976 | INFO     | __main__:__init__:253 - resnet34-resnet50-[64, 128, 256]-[256, 512, 1024]-[200, 400, 800]
+2022-03-15 16:42:12.979 | INFO     | __main__:register:282 - Projector2: 64, 64, in_dim=64, out_dim=256, latent_dim=200, dual_type=small, pe_required=True
+2022-03-15 16:42:12.980 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 16:42:12.999 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 16:42:13.007 | INFO     | __main__:register:287 - Projector2: 32, 32, in_dim=128, out_dim=512, latent_dim=400, dual_type=small, pe_required=True
+2022-03-15 16:42:13.008 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 16:42:13.011 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 16:42:13.033 | INFO     | __main__:register:291 - Projector2: 16, 16, in_dim=256, out_dim=1024, latent_dim=800, dual_type=small, pe_required=True
+2022-03-15 16:42:13.034 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 16:42:13.037 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 16:42:13.205 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/tire_2.pth
+2022-03-15 16:42:13.216 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/tire_3.pth
+2022-03-15 16:42:13.233 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/tire_4.pth
+2022-03-15 16:44:14.277 | INFO     | __main__:<module>:731 - tire, add, image auc: 0.71586, pixel auc: 0.98778, pixel pro0.3: 0.94830
+2022-03-15 16:44:14.279 | INFO     | __main__:<module>:733 - tire, time: 0.01801s, FPS: 55.53919.
+2022-03-15 16:44:14.929 | INFO     | __main__:__init__:253 - resnet34-resnet50-[64, 128, 256]-[256, 512, 1024]-[200, 400, 800]
+2022-03-15 16:44:14.931 | INFO     | __main__:register:282 - Projector2: 64, 64, in_dim=64, out_dim=256, latent_dim=200, dual_type=small, pe_required=True
+2022-03-15 16:44:14.933 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 16:44:14.952 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 16:44:14.960 | INFO     | __main__:register:287 - Projector2: 32, 32, in_dim=128, out_dim=512, latent_dim=400, dual_type=small, pe_required=True
+2022-03-15 16:44:14.961 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 16:44:14.964 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 16:44:14.985 | INFO     | __main__:register:291 - Projector2: 16, 16, in_dim=256, out_dim=1024, latent_dim=800, dual_type=small, pe_required=True
+2022-03-15 16:44:14.987 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-15 16:44:14.989 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-15 16:44:15.157 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/foam_2.pth
+2022-03-15 16:44:15.170 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/foam_3.pth
+2022-03-15 16:44:15.188 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/foam_4.pth
+2022-03-15 16:46:04.378 | INFO     | __main__:<module>:731 - foam, add, image auc: 0.67250, pixel auc: 0.91788, pixel pro0.3: 0.77342
+2022-03-15 16:46:04.380 | INFO     | __main__:<module>:733 - foam, time: 0.01980s, FPS: 50.51305.
+2022-03-15 16:46:04.382 | INFO     | __main__:<module>:739 - total, add, image AUC: 0.82441 | pixel AUC: 0.98350 | pixel PROo.3: 0.94090
+2022-03-15 16:46:04.383 | INFO     | __main__:<module>:740 - total, time: 0.01948s, FPS: 51.33674.
+2022-03-25 09:58:48.092 | INFO     | __main__:<module>:662 - 
+
+
+2022-03-25 09:58:48.113 | INFO     | __main__:<module>:663 - Namespace(agent_S='resnet34', agent_T='resnet50', batch_size=4, data_root='D:/Dataset/mvtec_3d_anomaly_detection', data_trans='imagenet', dual_type='small', epochs=100, fea_norm=True, fusion_scale='2-3-4', fusion_type=0, gpu_id='0', latent_dim=200, loss_type='l2norm+l2', lr2=0.0003, lr3=0.0003, lr4=0.0003, pe_required=True, post_smooth=0, resize=256, seed=888, train='True', weight_decay=1e-05)
+2022-03-25 09:58:48.115 | INFO     | __main__:<module>:664 - save_root: ./result_3D/PFMT_resnet34-resnet50-small-256_888/
+2022-03-25 09:58:49.376 | INFO     | __main__:__init__:253 - resnet34-resnet50-[64, 128, 256]-[256, 512, 1024]-[200, 400, 800]
+2022-03-25 09:58:49.377 | INFO     | __main__:register:282 - Projector2: 64, 64, in_dim=64, out_dim=256, latent_dim=200, dual_type=small, pe_required=True
+2022-03-25 09:58:49.378 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-25 09:58:53.857 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-25 09:58:53.867 | INFO     | __main__:register:287 - Projector2: 32, 32, in_dim=128, out_dim=512, latent_dim=400, dual_type=small, pe_required=True
+2022-03-25 09:58:53.869 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-25 09:58:53.872 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-25 09:58:53.895 | INFO     | __main__:register:291 - Projector2: 16, 16, in_dim=256, out_dim=1024, latent_dim=800, dual_type=small, pe_required=True
+2022-03-25 09:58:53.896 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-25 09:58:53.900 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-25 09:58:54.086 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/bagel_2.pth
+2022-03-25 09:58:54.181 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/bagel_3.pth
+2022-03-25 09:58:54.373 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/bagel_4.pth
+2022-03-25 10:01:04.743 | INFO     | __main__:<module>:731 - bagel, add, image auc: 0.97056, pixel auc: 0.99422, pixel pro0.3: 0.97521
+2022-03-25 10:01:04.745 | INFO     | __main__:<module>:733 - bagel, time: 0.05153s, FPS: 19.40774.
+2022-03-25 10:01:05.516 | INFO     | __main__:__init__:253 - resnet34-resnet50-[64, 128, 256]-[256, 512, 1024]-[200, 400, 800]
+2022-03-25 10:01:05.518 | INFO     | __main__:register:282 - Projector2: 64, 64, in_dim=64, out_dim=256, latent_dim=200, dual_type=small, pe_required=True
+2022-03-25 10:01:05.519 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-25 10:01:05.540 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-25 10:01:05.548 | INFO     | __main__:register:287 - Projector2: 32, 32, in_dim=128, out_dim=512, latent_dim=400, dual_type=small, pe_required=True
+2022-03-25 10:01:05.548 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-25 10:01:05.551 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-25 10:01:05.572 | INFO     | __main__:register:291 - Projector2: 16, 16, in_dim=256, out_dim=1024, latent_dim=800, dual_type=small, pe_required=True
+2022-03-25 10:01:05.573 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-25 10:01:05.576 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-25 10:01:05.742 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cable_gland_2.pth
+2022-03-25 10:01:05.821 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cable_gland_3.pth
+2022-03-25 10:01:05.995 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cable_gland_4.pth
+2022-03-25 10:03:00.868 | INFO     | __main__:<module>:731 - cable_gland, add, image auc: 0.88177, pixel auc: 0.99067, pixel pro0.3: 0.97571
+2022-03-25 10:03:00.870 | INFO     | __main__:<module>:733 - cable_gland, time: 0.01823s, FPS: 54.85799.
+2022-03-25 10:03:01.693 | INFO     | __main__:__init__:253 - resnet34-resnet50-[64, 128, 256]-[256, 512, 1024]-[200, 400, 800]
+2022-03-25 10:03:01.695 | INFO     | __main__:register:282 - Projector2: 64, 64, in_dim=64, out_dim=256, latent_dim=200, dual_type=small, pe_required=True
+2022-03-25 10:03:01.696 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-25 10:03:01.716 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-25 10:03:01.725 | INFO     | __main__:register:287 - Projector2: 32, 32, in_dim=128, out_dim=512, latent_dim=400, dual_type=small, pe_required=True
+2022-03-25 10:03:01.726 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-25 10:03:01.729 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-25 10:03:01.750 | INFO     | __main__:register:291 - Projector2: 16, 16, in_dim=256, out_dim=1024, latent_dim=800, dual_type=small, pe_required=True
+2022-03-25 10:03:01.751 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-25 10:03:01.754 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-25 10:03:01.922 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/carrot_2.pth
+2022-03-25 10:03:02.025 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/carrot_3.pth
+2022-03-25 10:03:02.189 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/carrot_4.pth
+2022-03-25 10:05:57.344 | INFO     | __main__:<module>:731 - carrot, add, image auc: 0.87009, pixel auc: 0.99242, pixel pro0.3: 0.97716
+2022-03-25 10:05:57.346 | INFO     | __main__:<module>:733 - carrot, time: 0.01961s, FPS: 50.99997.
+2022-03-25 10:05:58.118 | INFO     | __main__:__init__:253 - resnet34-resnet50-[64, 128, 256]-[256, 512, 1024]-[200, 400, 800]
+2022-03-25 10:05:58.120 | INFO     | __main__:register:282 - Projector2: 64, 64, in_dim=64, out_dim=256, latent_dim=200, dual_type=small, pe_required=True
+2022-03-25 10:05:58.121 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-25 10:05:58.141 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-25 10:05:58.149 | INFO     | __main__:register:287 - Projector2: 32, 32, in_dim=128, out_dim=512, latent_dim=400, dual_type=small, pe_required=True
+2022-03-25 10:05:58.150 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-25 10:05:58.153 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-25 10:05:58.175 | INFO     | __main__:register:291 - Projector2: 16, 16, in_dim=256, out_dim=1024, latent_dim=800, dual_type=small, pe_required=True
+2022-03-25 10:05:58.176 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-25 10:05:58.178 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-25 10:05:58.344 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cookie_2.pth
+2022-03-25 10:05:58.414 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cookie_3.pth
+2022-03-25 10:05:58.580 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/cookie_4.pth
+2022-03-25 10:08:26.282 | INFO     | __main__:<module>:731 - cookie, add, image auc: 0.64390, pixel auc: 0.97880, pixel pro0.3: 0.89047
+2022-03-25 10:08:26.284 | INFO     | __main__:<module>:733 - cookie, time: 0.01906s, FPS: 52.45670.
+2022-03-25 10:08:27.102 | INFO     | __main__:__init__:253 - resnet34-resnet50-[64, 128, 256]-[256, 512, 1024]-[200, 400, 800]
+2022-03-25 10:08:27.104 | INFO     | __main__:register:282 - Projector2: 64, 64, in_dim=64, out_dim=256, latent_dim=200, dual_type=small, pe_required=True
+2022-03-25 10:08:27.105 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-25 10:08:27.125 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-25 10:08:27.134 | INFO     | __main__:register:287 - Projector2: 32, 32, in_dim=128, out_dim=512, latent_dim=400, dual_type=small, pe_required=True
+2022-03-25 10:08:27.135 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-25 10:08:27.138 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-25 10:08:27.160 | INFO     | __main__:register:291 - Projector2: 16, 16, in_dim=256, out_dim=1024, latent_dim=800, dual_type=small, pe_required=True
+2022-03-25 10:08:27.161 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-25 10:08:27.163 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-25 10:08:27.332 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/dowel_2.pth
+2022-03-25 10:08:27.400 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/dowel_3.pth
+2022-03-25 10:08:27.569 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/dowel_4.pth
+2022-03-25 10:10:48.872 | INFO     | __main__:<module>:731 - dowel, add, image auc: 0.96043, pixel auc: 0.99613, pixel pro0.3: 0.98021
+2022-03-25 10:10:48.874 | INFO     | __main__:<module>:733 - dowel, time: 0.01801s, FPS: 55.53847.
+2022-03-25 10:10:49.696 | INFO     | __main__:__init__:253 - resnet34-resnet50-[64, 128, 256]-[256, 512, 1024]-[200, 400, 800]
+2022-03-25 10:10:49.698 | INFO     | __main__:register:282 - Projector2: 64, 64, in_dim=64, out_dim=256, latent_dim=200, dual_type=small, pe_required=True
+2022-03-25 10:10:49.700 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-25 10:10:49.718 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-25 10:10:49.726 | INFO     | __main__:register:287 - Projector2: 32, 32, in_dim=128, out_dim=512, latent_dim=400, dual_type=small, pe_required=True
+2022-03-25 10:10:49.727 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-25 10:10:49.730 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-25 10:10:49.752 | INFO     | __main__:register:291 - Projector2: 16, 16, in_dim=256, out_dim=1024, latent_dim=800, dual_type=small, pe_required=True
+2022-03-25 10:10:49.753 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-25 10:10:49.755 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-25 10:10:49.923 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/peach_2.pth
+2022-03-25 10:10:49.998 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/peach_3.pth
+2022-03-25 10:10:50.165 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/peach_4.pth
+2022-03-25 10:13:15.434 | INFO     | __main__:<module>:731 - peach, add, image auc: 0.89731, pixel auc: 0.99168, pixel pro0.3: 0.96923
+2022-03-25 10:13:15.436 | INFO     | __main__:<module>:733 - peach, time: 0.01883s, FPS: 53.11159.
+2022-03-25 10:13:16.290 | INFO     | __main__:__init__:253 - resnet34-resnet50-[64, 128, 256]-[256, 512, 1024]-[200, 400, 800]
+2022-03-25 10:13:16.292 | INFO     | __main__:register:282 - Projector2: 64, 64, in_dim=64, out_dim=256, latent_dim=200, dual_type=small, pe_required=True
+2022-03-25 10:13:16.293 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-25 10:13:16.314 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-25 10:13:16.323 | INFO     | __main__:register:287 - Projector2: 32, 32, in_dim=128, out_dim=512, latent_dim=400, dual_type=small, pe_required=True
+2022-03-25 10:13:16.324 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-25 10:13:16.327 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-25 10:13:16.349 | INFO     | __main__:register:291 - Projector2: 16, 16, in_dim=256, out_dim=1024, latent_dim=800, dual_type=small, pe_required=True
+2022-03-25 10:13:16.350 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-25 10:13:16.352 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-25 10:13:16.519 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/potato_2.pth
+2022-03-25 10:13:16.585 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/potato_3.pth
+2022-03-25 10:13:16.753 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/potato_4.pth
+2022-03-25 10:15:22.735 | INFO     | __main__:<module>:731 - potato, add, image auc: 0.63982, pixel auc: 0.99235, pixel pro0.3: 0.96833
+2022-03-25 10:15:22.737 | INFO     | __main__:<module>:733 - potato, time: 0.01982s, FPS: 50.44396.
+2022-03-25 10:15:23.569 | INFO     | __main__:__init__:253 - resnet34-resnet50-[64, 128, 256]-[256, 512, 1024]-[200, 400, 800]
+2022-03-25 10:15:23.571 | INFO     | __main__:register:282 - Projector2: 64, 64, in_dim=64, out_dim=256, latent_dim=200, dual_type=small, pe_required=True
+2022-03-25 10:15:23.572 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-25 10:15:23.592 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-25 10:15:23.600 | INFO     | __main__:register:287 - Projector2: 32, 32, in_dim=128, out_dim=512, latent_dim=400, dual_type=small, pe_required=True
+2022-03-25 10:15:23.601 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-25 10:15:23.604 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-25 10:15:23.626 | INFO     | __main__:register:291 - Projector2: 16, 16, in_dim=256, out_dim=1024, latent_dim=800, dual_type=small, pe_required=True
+2022-03-25 10:15:23.627 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-25 10:15:23.629 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-25 10:15:23.794 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/rope_2.pth
+2022-03-25 10:15:23.870 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/rope_3.pth
+2022-03-25 10:15:24.032 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/rope_4.pth
+2022-03-25 10:17:14.011 | INFO     | __main__:<module>:731 - rope, add, image auc: 0.99185, pixel auc: 0.99302, pixel pro0.3: 0.95094
+2022-03-25 10:17:14.013 | INFO     | __main__:<module>:733 - rope, time: 0.01978s, FPS: 50.55966.
+2022-03-25 10:17:14.795 | INFO     | __main__:__init__:253 - resnet34-resnet50-[64, 128, 256]-[256, 512, 1024]-[200, 400, 800]
+2022-03-25 10:17:14.797 | INFO     | __main__:register:282 - Projector2: 64, 64, in_dim=64, out_dim=256, latent_dim=200, dual_type=small, pe_required=True
+2022-03-25 10:17:14.799 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-25 10:17:14.822 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-25 10:17:14.830 | INFO     | __main__:register:287 - Projector2: 32, 32, in_dim=128, out_dim=512, latent_dim=400, dual_type=small, pe_required=True
+2022-03-25 10:17:14.831 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-25 10:17:14.835 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-25 10:17:14.856 | INFO     | __main__:register:291 - Projector2: 16, 16, in_dim=256, out_dim=1024, latent_dim=800, dual_type=small, pe_required=True
+2022-03-25 10:17:14.857 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-25 10:17:14.860 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-25 10:17:15.026 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/tire_2.pth
+2022-03-25 10:17:15.096 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/tire_3.pth
+2022-03-25 10:17:15.272 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/tire_4.pth
+2022-03-25 10:19:17.473 | INFO     | __main__:<module>:731 - tire, add, image auc: 0.71586, pixel auc: 0.98778, pixel pro0.3: 0.94830
+2022-03-25 10:19:17.475 | INFO     | __main__:<module>:733 - tire, time: 0.01968s, FPS: 50.81486.
+2022-03-25 10:19:18.282 | INFO     | __main__:__init__:253 - resnet34-resnet50-[64, 128, 256]-[256, 512, 1024]-[200, 400, 800]
+2022-03-25 10:19:18.284 | INFO     | __main__:register:282 - Projector2: 64, 64, in_dim=64, out_dim=256, latent_dim=200, dual_type=small, pe_required=True
+2022-03-25 10:19:18.285 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-25 10:19:18.306 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-25 10:19:18.314 | INFO     | __main__:register:287 - Projector2: 32, 32, in_dim=128, out_dim=512, latent_dim=400, dual_type=small, pe_required=True
+2022-03-25 10:19:18.315 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-25 10:19:18.318 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-25 10:19:18.339 | INFO     | __main__:register:291 - Projector2: 16, 16, in_dim=256, out_dim=1024, latent_dim=800, dual_type=small, pe_required=True
+2022-03-25 10:19:18.341 | INFO     | __main__:__init__:120 - Position Encoding is Used!
+2022-03-25 10:19:18.343 | INFO     | __main__:__init__:133 - small model is Used!
+2022-03-25 10:19:18.509 | INFO     | __main__:load_project_model:582 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/foam_2.pth
+2022-03-25 10:19:18.577 | INFO     | __main__:load_project_model:584 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/foam_3.pth
+2022-03-25 10:19:18.839 | INFO     | __main__:load_project_model:586 - Load from ./result_3D/PFMT_resnet34-resnet50-small-256_888/ckpt/foam_4.pth
+2022-03-25 10:21:13.574 | INFO     | __main__:<module>:731 - foam, add, image auc: 0.67250, pixel auc: 0.91788, pixel pro0.3: 0.77342
+2022-03-25 10:21:13.576 | INFO     | __main__:<module>:733 - foam, time: 0.01984s, FPS: 50.41132.
+2022-03-25 10:21:13.577 | INFO     | __main__:<module>:739 - total, add, image AUC: 0.82441 | pixel AUC: 0.98350 | pixel PROo.3: 0.94090
+2022-03-25 10:21:13.579 | INFO     | __main__:<module>:740 - total, time: 0.02244s, FPS: 44.56756.
