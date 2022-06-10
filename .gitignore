@@ -3,3 +3,4 @@ __pycache__/
 *.pth
 *.png
 result/
+result_3D/
