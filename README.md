@@ -80,5 +80,5 @@ If there is any help for your work, please consider citing these papers:
 ## Acknowledgment
 
 Thanks for the excellent work for:
- [SPADE](https://github.com/byungjae89/SPADE-pytorch).
- [PositionalEncoding2D](https://github.com/wzlxjtu/PositionalEncoding2D)
+- [SPADE](https://github.com/byungjae89/SPADE-pytorch)
+- [PositionalEncoding2D](https://github.com/wzlxjtu/PositionalEncoding2D)
