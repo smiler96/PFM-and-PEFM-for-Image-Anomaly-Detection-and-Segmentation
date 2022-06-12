@@ -52,7 +52,7 @@ python PEFM_AD.py --gpu_id 0 --batch_size 16 --epochs 200 --resize 256 --data_tr
 
 ## Citation
 
-If there is any help for your work, please consider citing this paper:
+If there is any help for your work, please consider citing these papers:
 
 ```BibTeX
 @ARTICLE{PFM,
@@ -79,4 +79,6 @@ If there is any help for your work, please consider citing this paper:
 
 ## Acknowledgment
 
-Thanks for the excellent work for [SPADE](https://github.com/byungjae89/SPADE-pytorch).
+Thanks for the excellent work for:
+ [SPADE](https://github.com/byungjae89/SPADE-pytorch).
+ [PositionalEncoding2D](https://github.com/wzlxjtu/PositionalEncoding2D)
