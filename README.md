@@ -2,7 +2,7 @@
 
 ## Abstract
 
-### Unsupervised Image Anomaly Detection and Segmentation Based on Pre-trained Feature Mapping [(PFM-TII)](https://www.researchgate.net/publication/361228978_Unsupervised_Image_Anomaly_Detection_and_Segmentation_Based_on_Pre-trained_Feature_Mapping)
+### Unsupervised Image Anomaly Detection and Segmentation Based on Pre-trained Feature Mapping [(PFM-TII)](hhttps://ieeexplore.ieee.org/document/9795121)
 
 Image anomaly detection and segmentation are important for the development of automatic product quality inspection in intelligent manufacturing. Because the normal data can be collected easily and abnormal ones are rarely existent, unsupervised methods based on reconstruction and embedding have been mainly studied for anomaly detection. But the detection performance and computing time requires to be further improved. This paper proposes a novel framework, named as Pre-trained Feature Mapping (PFM), for unsupervised image anomaly detection and segmentation. The proposed PFM maps the image from a pre-trained feature space to another one to detect the anomalies effectively. The bidirectional and multi-hierarchical bidirectional pre-trained feature mapping are further proposed and studied for improving the performance. The proposed framework achieves the better results on well-known MVTec AD dataset compared with state-of-the-art methods, with the area under the receiver operating characteristic curve of 97.5% for anomaly detection and of 97.3% for anomaly segmentation over all 15 categories. The proposed framework is also superior in term of the computing time. The extensive experiments on ablation studies are also conducted to show the effectiveness and efficient of the proposed framework.
 
