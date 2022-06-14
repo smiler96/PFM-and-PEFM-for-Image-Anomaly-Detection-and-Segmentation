@@ -10,7 +10,7 @@ Image anomaly detection and segmentation are important for the development of au
   <img src="pdf\PFM.bmp" alt='PFM' height=80% width=80%>
 </div>
 
-### Position Encoding Enhanced Feature Mapping for Image Anomaly Detection [(PEFM CASE)](https://www.researchgate.net/publication/361228799_Position_Encoding_Enhanced_Feature_Mapping_for_Image_Anomaly_Detection)
+### Position Encoding Enhanced Feature Mapping for Image Anomaly Detection [(PEFM CASE)](https://www.researchgate.net/publication/361254312_Position_Encoding_Enhanced_Feature_Mapping_for_Image_Anomaly_Detection)
 
 Image anomaly detection is an important stage for automatic visual inspection in intelligent manufacturing systems. The wide-ranging anomalies in images, such as various sizes, shapes, and colors, make automatic visual inspection challenging. Previous work on image anomaly detection has achieved significant advancements. However,  there are still limitations in terms of detection performance and efficiency. In this paper, a novel Position Encoding enhanced Feature Mapping (PEFM) method is proposed to address the problem of image anomaly detection, detecting the anomalies by mapping a pair of pre-trained features embedded with position encodes. Experiment results show that the proposed PEFM achieves better performance and efficiency than the state-of-the-art methods on the MVTec AD dataset, an AUCROC of 98.30% and an AUCPRO of 95.52%, and achieves the  AUCPRO of 94.0% on the MVTec 3D AD dataset.
 
