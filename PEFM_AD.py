@@ -8,18 +8,20 @@ from torch.utils.tensorboard import SummaryWriter
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from torchvision.models.resnet import resnet18, resnet34, resnet50, resnet101, resnet152
+from torchvision.models.resnet import resnet18, resnet34, resnet50, resnet101, resnet152, wide_resnet50_2
 from torchvision.models.vgg import vgg16_bn, vgg19_bn
 import os
 import numpy as np
 from sklearn.metrics import roc_auc_score
-from utils import visualize, set_seed, cal_pro_metric_new
+from utils import visualize, set_seed, cal_pro_metric_new, visualize_score_maps
 from loguru import logger
 import argparse
 import time
 from scipy.ndimage import gaussian_filter
 import matplotlib.pyplot as plt
 
+import random
+import pandas as pd
 import math
 
 def positionalencoding2d(D, H, W):
@@ -220,7 +222,7 @@ class DualProjectionWithPENet(nn.Module):
 
 
 class PFMT_AD(object):
-    def __init__(self, agent_S='resnet50', agent_T="resnet101", fea_norm=True, dual_type=None, pe_required=True, save_root=None):
+    def __init__(self, agent_S='resnet50', agent_T="resnet101", fea_norm=True, dual_type=None, pe_required=True, d1=200, d2=400, d3=800, save_root=None):
         self.s_name = agent_S
         self.t_name = agent_T
         self.fea_norm = fea_norm
@@ -240,12 +242,12 @@ class PFMT_AD(object):
             self.Agent1 = PretrainedModel(model_name=agent_S)
             self.indim = [256, 512, 1024]
             # self.Agent2 = PretrainedModel(model_name="resnet34")
-        if agent_T == "resnet50" or agent_T == "resnet101" or agent_T == "resnet152":
+        if agent_T == "resnet50" or agent_T == "resnet101" or agent_T == "resnet152" or agent_T == "wide_resnet50_2":
             # self.Agent1 = PretrainedModel(model_name="vgg16")
             self.Agent2 = PretrainedModel(model_name=agent_T)
             self.outdim = [256, 512, 1024]
 
-        self.latent_dim = [200, 400, 800]
+        self.latent_dim = [d1, d2, d3]
         # for x, y in zip(self.indim, self.outdim):
             # self.latent_dim.append(int(y-x))
         logger.info(f"{agent_S}-{agent_T}-{self.indim}-{self.outdim}-{self.latent_dim}")
@@ -321,7 +323,7 @@ class PFMT_AD(object):
                 shutil.rmtree(self.tblog)
             os.makedirs(self.tblog, exist_ok=True)
             self.writer = SummaryWriter(log_dir=self.tblog)
-            for ep in range(0, epochs):
+            for ep in range(1, epochs+1):
                 self.projector2.train()
                 self.projector3.train()
                 self.projector4.train()
@@ -332,8 +334,8 @@ class PFMT_AD(object):
                     # project_out2 = self.projector2(out_a1["out2"].detach())
                     # loss2 = torch.mean((out_a2["out2"].detach() - project_out2) ** 2)
                     project_out21, project_out22 = self.projector2(out_a1["out2"].detach(), out_a2["out2"].detach())
-                    loss21 = torch.mean((out_a1["out2"] - project_out21) ** 2)
-                    loss22 = torch.mean((out_a2["out2"] - project_out22) ** 2)
+                    loss21 = torch.mean((out_a1["out2"].detach() - project_out21) ** 2)
+                    loss22 = torch.mean((out_a2["out2"].detach() - project_out22) ** 2)
                     loss2 = loss21 + loss22
                     self.optimizer2.zero_grad()
                     loss2.backward()
@@ -366,16 +368,16 @@ class PFMT_AD(object):
                 torch.save(self.projector2.state_dict(), self.ckpt2)
                 torch.save(self.projector3.state_dict(), self.ckpt3)
                 torch.save(self.projector4.state_dict(), self.ckpt4)
-                if ep % 5 == 0:
-                    metrix = self.test(cal_pro=False)
+                if ep % 20 == 0:
+                    metrix = self.test(cal_pro=False, cal_metrix=True)
                     logger.info(f"Epoch-{ep}, {self.class_name} | all: {metrix['all'][0]:.5f}, {metrix['all'][1]:.5f} | 2: {metrix['2'][0]:.5f}, {metrix['2'][1]:.5f}"
                                 f"| 3: {metrix['3'][0]:.5f}, {metrix['3'][1]:.5f} | 4: {metrix['4'][0]:.5f}, {metrix['4'][1]:.5f}")
-                    self.writer.add_scalar('Val/imge_auc2', metrix['2'][0], ep)
-                    self.writer.add_scalar('Val/pixel_auc2', metrix['2'][1], ep)
-                    self.writer.add_scalar('Val/imge_auc3', metrix['3'][0], ep)
-                    self.writer.add_scalar('Val/pixel_auc3', metrix['3'][1], ep)
-                    self.writer.add_scalar('Val/imge_auc4', metrix['4'][0], ep)
-                    self.writer.add_scalar('Val/pixel_auc4', metrix['4'][1], ep)
+                    # self.writer.add_scalar('Val/imge_auc2', metrix['2'][0], ep)
+                    # self.writer.add_scalar('Val/pixel_auc2', metrix['2'][1], ep)
+                    # self.writer.add_scalar('Val/imge_auc3', metrix['3'][0], ep)
+                    # self.writer.add_scalar('Val/pixel_auc3', metrix['3'][1], ep)
+                    # self.writer.add_scalar('Val/imge_auc4', metrix['4'][0], ep)
+                    # self.writer.add_scalar('Val/pixel_auc4', metrix['4'][1], ep)
                     self.writer.add_scalar('Val/imge_auc', metrix['all'][0], ep)
                     self.writer.add_scalar('Val/pixel_auc', metrix['all'][1], ep)
             self.writer.close()
@@ -428,7 +430,7 @@ class PFMT_AD(object):
             self.var42 = 1
 
 
-    def test(self, cal_pro=False, fusion_type=0):
+    def test(self, cal_pro=False, cal_metrix=False, fusion_type=0):
         self.load_project_model()
         self.projector2.eval()
         self.projector3.eval()
@@ -516,18 +518,30 @@ class PFMT_AD(object):
 
             t_per_imge = t_per_imge / len(score_list)
 
-            visualize(test_img_list, test_mask_list, score_map_list, test_img_name_list, self.class_name,
-                      f"{self.save_root}image/", 10000)
- 
+            if self.class_name == "cable" or self.class_name == "transistor": 
+                visualize(test_img_list, test_mask_list, score_map_list, test_img_name_list, self.class_name, f"{self.save_root}image/", 10000) 
+            # visualize_score_maps(score2_map_list, test_img_name_list, class_name, f"{self.save_root}image/", layer="1")
+            # visualize_score_maps(score3_map_list, test_img_name_list, class_name, f"{self.save_root}image/", layer="2")
+            # visualize_score_maps(score4_map_list, test_img_name_list, class_name, f"{self.save_root}image/", layer="3")
 
             # ROCAUC
-            imge_auc2, pixel_auc2, pixel_pro2 = self.cal_auc(score2_list, score2_map_list, test_y_list, test_mask_list, cal_pro=False)
-            imge_auc3, pixel_auc3, pixel_pro3 = self.cal_auc(score3_list, score3_map_list, test_y_list, test_mask_list, cal_pro=False)
-            imge_auc4, pixel_auc4, pixel_pro4 = self.cal_auc(score4_list, score4_map_list, test_y_list, test_mask_list, cal_pro=False)
-            imge_auc, pixel_auc, pixel_pro = self.cal_auc(score_list, score_map_list, test_y_list, test_mask_list, cal_pro=cal_pro)
-            # print(f"pixel AUC: {pixel_level_ROCAUC:.5f}")
-            metrix = {"2": [imge_auc2, pixel_auc2, pixel_pro2], "3": [imge_auc3, pixel_auc3, pixel_pro3],"4":[imge_auc4,
-                      pixel_auc4, pixel_pro4], "all": [imge_auc, pixel_auc, pixel_pro], "time": t_per_imge}
+            if cal_metrix:
+                imge_auc2, pixel_auc2, pixel_pro2 = self.cal_auc(score2_list, score2_map_list, test_y_list, test_mask_list, cal_pro=cal_pro)
+                imge_auc3, pixel_auc3, pixel_pro3 = self.cal_auc(score3_list, score3_map_list, test_y_list, test_mask_list, cal_pro=cal_pro)
+                imge_auc4, pixel_auc4, pixel_pro4 = self.cal_auc(score4_list, score4_map_list, test_y_list, test_mask_list, cal_pro=cal_pro)
+                imge_auc, pixel_auc, pixel_pro = self.cal_auc(score_list, score_map_list, test_y_list, test_mask_list, cal_pro=cal_pro)
+                # print(f"pixel AUC: {pixel_level_ROCAUC:.5f}")
+                metrix = {"2": [imge_auc2, pixel_auc2, pixel_pro2], 
+                        "3": [imge_auc3, pixel_auc3, pixel_pro3],
+                        "4": [imge_auc4, pixel_auc4, pixel_pro4], 
+                        "all": [imge_auc, pixel_auc, pixel_pro], 
+                        "time": t_per_imge}
+            else:
+                metrix = {"2": [0, 0, 0], 
+                        "3": [0, 0, 0],
+                        "4": [0, 0, 0], 
+                        "all": [0, 0, 0], 
+                        "time": 1}
             # metrix = {"all": [imge_auc, pixel_auc, pixel_pro], "time": t_per_imge}
 
 
@@ -593,7 +607,7 @@ def parse_args():
     parser = argparse.ArgumentParser('PFMT')
     parser.add_argument("--seed", type=int, default=888)
     parser.add_argument("--gpu_id", type=str, default="0")
-    parser.add_argument("--train", action="store_false")
+    parser.add_argument("--train", action="store_true")
 
     parser.add_argument("--data_trans", type=str, default='imagenet', choices=['aug', 'imagenet'])
 
@@ -603,8 +617,11 @@ def parse_args():
     parser.add_argument("--agent_S", type=str, default='resnet34')
     parser.add_argument("--agent_T", type=str, default='resnet50')
     parser.add_argument("--fea_norm", type=bool, default=True)
-    parser.add_argument("--pe_required", action="store_false")
+    parser.add_argument("--pe_required", action="store_true")
     parser.add_argument("--dual_type", type=str, default="small")
+    parser.add_argument("--d1", type=int, default=200)
+    parser.add_argument("--d2", type=int, default=400)
+    parser.add_argument("--d3", type=int, default=800)
 
     parser.add_argument("--epochs", type=int, default=200)
     parser.add_argument("--batch_size", type=int, default=1)  # 6 or 20 for train
@@ -630,9 +647,9 @@ if __name__ == "__main__":
     args = parse_args()
     set_seed(args.seed)
     if args.fea_norm:
-        name_root = f"PEFM_{args.agent_S}-{args.agent_T}-{args.dual_type}-{args.resize}" 
+        name_root = f"PEFM_{args.agent_S}-{args.agent_T}-{args.dual_type}-{args.d1}-{args.d2}-{args.d3}-{args.resize}" 
     else:  
-        name_root = f"PEFM_NFN_{args.agent_S}-{args.agent_T}-{args.dual_type}-{args.resize}" 
+        name_root = f"PEFM_NFN_{args.agent_S}-{args.agent_T}-{args.dual_type}-{args.d1}-{args.d2}-{args.d3}-{args.resize}" 
     if not args.pe_required:
         name_root = f"{name_root}-NotPE"
     if args.data_trans == "aug": 
@@ -662,6 +679,18 @@ if __name__ == "__main__":
     pixel_aucs = []
     pro_30s = []
     times = []
+    
+    image_aucs_2 = []
+    pixel_aucs_2 = []
+    pro_30s_2 = []
+
+    image_aucs_3 = []
+    pixel_aucs_3 = []
+    pro_30s_3 = []
+
+    image_aucs_4 = []
+    pixel_aucs_4 = []
+    pro_30s_4 = []
     # plt.figure(figsize=(10, 8))
     for class_name in MVTec_CLASS_NAMES:
         torch.cuda.empty_cache()
@@ -687,7 +716,8 @@ if __name__ == "__main__":
                                trans=None)
         testloader = DataLoader(testset, batch_size=args.batch_size, shuffle=False, pin_memory=True, num_workers=4)
 
-        model = PFMT_AD(agent_S=args.agent_S, agent_T=args.agent_T, fea_norm=args.fea_norm, dual_type=args.dual_type, pe_required=args.pe_required, save_root=save_root)
+        model = PFMT_AD(agent_S=args.agent_S, agent_T=args.agent_T, fea_norm=args.fea_norm, dual_type=args.dual_type, d1=args.d1, d2=args.d2, d3=args.d3,
+                        pe_required=args.pe_required, save_root=save_root)
         model.register(class_name=class_name, trainloader=trainloader, testloader=testloader, loss_type=args.loss_type,
                        data_trans=args.data_trans, size=args.resize, device=device,
                        latent_dim=args.latent_dim,
@@ -697,13 +727,28 @@ if __name__ == "__main__":
             model.train(epochs=args.epochs)
         # else:
         # model.load_student_weight()
-        metrix = model.test(cal_pro=False, fusion_type=args.fusion_type)
+        metrix = model.test(cal_pro=False, cal_metrix=False, fusion_type=args.fusion_type)
         image_aucs.append(metrix["all"][0])
         pixel_aucs.append(metrix["all"][1])
         pro_30s.append(metrix["all"][2])
+        
+        image_aucs_2.append(metrix["2"][0])
+        pixel_aucs_2.append(metrix["2"][1])
+        pro_30s_2.append(metrix["2"][2])
+ 
+        image_aucs_3.append(metrix["3"][0])
+        pixel_aucs_3.append(metrix["3"][1])
+        pro_30s_3.append(metrix["3"][2])
+ 
+        image_aucs_4.append(metrix["4"][0])
+        pixel_aucs_4.append(metrix["4"][1])
+        pro_30s_4.append(metrix["4"][2])
         fusion_type_str = "add" if args.fusion_type==0 else "multiply"
         # fusion_type_str = f"{fusion_type_str}_{args.fusion_scale}"
-        logger.info(f"{class_name}, {fusion_type_str}, image auc: {metrix['all'][0]:.5f}, pixel auc: {metrix['all'][1]:.5f}, pixel pro0.3: {metrix['all'][2]:.5f}")
+        logger.info(f"{class_name}, {fusion_type_str}, All I-roc: {metrix['all'][0]:.4f}, P-roc: {metrix['all'][1]:.4f}, P-pro: {metrix['all'][2]:.4f}")
+        logger.info(f"{class_name}, {fusion_type_str},  H2 I-roc: {metrix['2'][0]:.4f}, P-roc: {metrix['2'][1]:.4f}, P-pro: {metrix['2'][2]:.4f}")
+        logger.info(f"{class_name}, {fusion_type_str},  H3 I-roc: {metrix['3'][0]:.4f}, P-roc: {metrix['3'][1]:.4f}, P-pro: {metrix['3'][2]:.4f}")
+        logger.info(f"{class_name}, {fusion_type_str},  H4 I-roc: {metrix['4'][0]:.4f}, P-roc: {metrix['4'][1]:.4f}, P-pro: {metrix['4'][2]:.4f}")
         times.append(metrix['time'])
         logger.info(f"{class_name}, time: {metrix['time']:.5f}s, FPS: {1.0/metrix['time']:.5f}.")
 
@@ -711,5 +756,57 @@ if __name__ == "__main__":
     p_auc = np.mean(np.array(pixel_aucs))
     pro_auc = np.mean(np.array(pro_30s))
     times = np.mean(np.array(times))
-    logger.info(f"total, {fusion_type_str}, image AUC: {i_auc:.3f} | pixel AUC: {p_auc:.3f} | pixel PROo.3: {pro_auc:.3f}")
-    logger.info(f"total, time: {times:.5f}s, FPS: {1.0/times:.5f}.")
+    logger.info(f"Total All, {fusion_type_str}, I-AUC: {i_auc:.4f} | P-AUC: {p_auc:.4f} | P-PRO: {pro_auc:.4f}")
+    logger.info(f"Total, time: {times:.5f}s, FPS: {1.0/times:.5f}.")
+
+    i_auc_2 = np.mean(np.array(image_aucs_2))
+    p_auc_2 = np.mean(np.array(pixel_aucs_2))
+    pro_auc_2 = np.mean(np.array(pro_30s_2))
+    logger.info(f"Total  H2, {fusion_type_str}, I-AUC: {i_auc_2:.4f} | P-AUC: {p_auc_2:.4f} | P-PRO: {pro_auc_2:.4f}")
+
+    i_auc_3 = np.mean(np.array(image_aucs_3))
+    p_auc_3 = np.mean(np.array(pixel_aucs_3))
+    pro_auc_3 = np.mean(np.array(pro_30s_3))
+    logger.info(f"Total  H3, {fusion_type_str}, I-AUC: {i_auc_3:.4f} | P-AUC: {p_auc_3:.4f} | P-PRO: {pro_auc_3:.4f}")
+
+    i_auc_4 = np.mean(np.array(image_aucs_4))
+    p_auc_4 = np.mean(np.array(pixel_aucs_4))
+    pro_auc_4 = np.mean(np.array(pro_30s_4))
+    logger.info(f"Total  H4, {fusion_type_str}, I-AUC: {i_auc_4:.4f} | P-AUC: {p_auc_4:.4f} | P-PRO: {pro_auc_4:.4f}")
+
+    index_name = MVTec_CLASS_NAMES + ["Avg"]
+    image_aucs.append(i_auc)
+    pixel_aucs.append(p_auc)
+    pro_30s.append(pro_auc)
+
+    image_aucs_2.append(i_auc_2)
+    pixel_aucs_2.append(p_auc_2)
+    pro_30s_2.append(pro_auc_2)
+
+    image_aucs_3.append(i_auc_3)
+    pixel_aucs_3.append(p_auc_3)
+    pro_30s_3.append(pro_auc_3)
+
+    image_aucs_4.append(i_auc_4)
+    pixel_aucs_4.append(p_auc_4)
+    pro_30s_4.append(pro_auc_4)
+
+    dict_data = {'Categoty':index_name, 
+                 'I-ROCAUC-H2':image_aucs_2, 
+                 'P-ROCAUC-H2':pixel_aucs_2, 
+                 'P-PROAUC-H2':pro_30s_2,
+                 
+                 'I-ROCAUC-H3':image_aucs_3, 
+                 'P-ROCAUC-H3':pixel_aucs_3, 
+                 'P-PROAUC-H3':pro_30s_3,
+
+                 'I-ROCAUC-H4':image_aucs_4, 
+                 'P-ROCAUC-H4':pixel_aucs_4, 
+                 'P-PROAUC-H4':pro_30s_4,
+ 
+                 'I-ROCAUC-All':image_aucs, 
+                 'P-ROCAUC-All':pixel_aucs, 
+                 'P-PROAUC-All':pro_30s,
+                 }
+    df = pd.DataFrame(dict_data)
+    # df.to_csv(os.path.join(save_root, f"PEFM_MVTec.csv"), float_format='%.5f', index=False)
