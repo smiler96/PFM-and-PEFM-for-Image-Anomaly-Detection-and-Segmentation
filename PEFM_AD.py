@@ -621,7 +621,7 @@ def parse_args():
     parser.add_argument("--dual_type", type=str, default="small")
     parser.add_argument("--d1", type=int, default=200)
     parser.add_argument("--d2", type=int, default=400)
-    parser.add_argument("--d3", type=int, default=800)
+    parser.add_argument("--d3", type=int, default=900)
 
     parser.add_argument("--epochs", type=int, default=200)
     parser.add_argument("--batch_size", type=int, default=1)  # 6 or 20 for train
